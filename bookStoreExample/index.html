@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Book Store Example</title>
+</head>
+<body>
+    <header>
+        <p id="storeName"></p>
+        <p id="slogan"></p>
+        <form id="formSearch">
+            <input title="bookName" id="bookName" type="text" placeholder="Enter name of book">
+            <input title="search" id="submitButton" type="submit" value="Search for book">
+        </form>
+    </header>
+    <section>
+
+    </section>
+<script>
+    var storeName = document.querySelector("#storeName");
+    var slogan = document.querySelector("#slogan");
+    var submitButton = document.querySelector("#submitButton");
+    var bookNameField = document.querySelector("#bookName");
+    var section = document.querySelector("section");
+    var form = document.querySelector("#formSearch");
+
+    storeName.textContent = "DUC LE BOOK GOOGLE API";
+    slogan.textContent = "Make it happen";
+
+    // Prevent the page to reload if the submit button is click and form is submitted.
+    // All the child added programmatically by search action will be cleared if the page reload.
+    function beginSearch(e) {
+        var searchBookNameURL = googleAPIURL+bookNameField.value;
+        httpRequest.open("GET",searchBookNameURL);
+        httpRequest.send();
+        // preventDefault will stop the  default of submit event reloading the page
+        e.preventDefault();
+    }
+
+//    form.onsubmit = function () {
+//        beginSearch();
+//        return false;
+//    };
+
+    form.addEventListener("submit", beginSearch, false);
+
+    var googleAPIURL = "https://www.googleapis.com/books/v1/volumes?q=";
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.responseType = "json";
+
+    submitButton.addEventListener("click", beginSearch);
+
+    httpRequest.onload = function () {
+        var jsonObject = httpRequest.response;
+        for (var i=0; i< jsonObject["items"].length; i++) {
+            var book = jsonObject["items"][i];
+            var newBookArticle = document.createElement("article");
+            var nameBookInArticle = document.createElement("p");
+            nameBookInArticle.textContent = book["volumeInfo"]["title"];
+            var coverImageBook = document.createElement("img");
+            coverImageBook.setAttribute("src", book["volumeInfo"]["imageLinks"]["thumbnail"]);
+            coverImageBook.setAttribute("alt", "An image of book");
+
+            newBookArticle.appendChild(nameBookInArticle);
+            newBookArticle.appendChild(coverImageBook);
+            section.appendChild(newBookArticle);
+        }
+    };
+
+    httpRequest.onloadend = function () {
+        for (var i = 0; i < section.childElementCount; i++) {
+            section.children[i].addEventListener("click", function () {
+                // Fail to find the right children
+               open("http://www.google.com/search?q="+section.children[i].children[0].textContent)
+            });
+        }
+    }
+</script>
+</body>
+</html>

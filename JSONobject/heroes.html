@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Our superheroes</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+</header>
+
+<section>
+
+</section>
+
+<script>
+    var header = document.querySelector('header');
+    var section = document.querySelector('section');
+
+    // The link of JSON object
+    var requestURL = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+    var request = new XMLHttpRequest();
+    request.open("GET", requestURL);
+    request.responseType = "json";
+    request.send();
+
+    request.onload = function () {
+        var superHeroes = request.response;
+        console.log(superHeroes);
+        populateHeader(superHeroes);
+        showHeroes(superHeroes);
+    };
+
+    function populateHeader(jsonObject) {
+        var myH1 = document.createElement("h1");
+        myH1.textContent = jsonObject["squadName"];
+        header.appendChild(myH1);
+
+        var myPara = document.createElement("p");
+        myPara.textContent = "Hometown: " + jsonObject["homeTown"] + "// Formed 2016";
+        header.appendChild(myPara);
+    }
+    
+    function showHeroes(jsonObject) {
+        for (var i=0; i < jsonObject["members"].length; i++) {
+            var newArticle = document.createElement("article");
+
+            var nameh2 = document.createElement("h2");
+            nameh2.textContent = jsonObject["members"][i]["name"];
+            newArticle.appendChild(nameh2);
+
+            var secretID = document.createElement("p");
+            secretID.textContent = "Secret identity: "+jsonObject["members"][i]["secretIdentity"];
+            newArticle.appendChild(secretID);
+
+            var age = document.createElement("p");
+            age.textContent = "Age: "+jsonObject["members"][i]["age"];
+            newArticle.appendChild(age);
+
+            var powersSection = document.createElement("p");
+            powersSection.textContent = "Superpowers: ";
+            newArticle.appendChild(powersSection);
+            var listPowerUl = document.createElement("ul");
+            for (var z = 0; z < jsonObject["members"][i]["powers"].length; z++) {
+                var aPower = document.createElement("li");
+                aPower.textContent = jsonObject["members"][i]["powers"][z];
+                listPowerUl.appendChild(aPower);
+            }
+            newArticle.appendChild(listPowerUl);
+
+            section.appendChild(newArticle);
+        }
+
+    }
+</script>
+</body>
+</html>

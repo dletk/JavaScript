@@ -1,0 +1,87 @@
+body {
+    font-family: "Oswald", "Futura", "sans-serif";
+    color: white;
+    background-color: black;
+}
+div#page {
+    height: 50%;
+    width: 50%;
+    background-color: #333333;
+    margin: 0 auto 0 auto;
+    max-width: 500px;
+}
+h1 {
+    text-align: center;
+    background-image: url("../img/2xkinglogo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0 auto 0 auto;
+    padding: 30px 10px 20px 10px;
+    text-indent: -1000%;
+    height: 75px;
+    width: 117px;
+    line-height: 75px;
+    background-size: 50%;
+}
+h2 {
+    text-align: center;
+    letter-spacing: 0.3em;
+    font-size: 24px;
+    margin: 0 0 23px 0;
+}
+/*Form style*/
+form {
+    padding: 0 70px 65px 70px;
+    line-height: 50px;
+}
+
+label {
+    display: block;
+    font-size: 20px;
+}
+input[type="text"], input[type="password"] {
+    background-color: #5a514c;
+    border: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 96%;
+    padding: 6px 9px;
+    font-family: "Oswald", "Futura", "sans-serif";
+    color: #666666;
+}
+input[type="text"]:focus, input[type="password"]:focus {
+    background-color: white;
+    outline: none;
+}
+div#feedback, div#feedbackPassword {
+    font-family: 'Oswald', 'Futura', sans-serif;
+    font-size: 14px;
+}
+input[type="submit"] {
+    color: #ffffff;
+    background-color: orange;
+    font-size: 24px;
+    border: 0;
+    border-radius: 8px;
+    float: right;
+    margin-top: 10px;
+    padding: 5px;
+}
+input[type="submit"]:hover {
+    position: relative;
+    top: 1px;
+    background-color: darkorange;
+    cursor: pointer;
+}
+#feedback {
+    padding: 0 22px 0 22px;
+    background-image: url("../img/warning.png");
+    background-repeat: no-repeat;
+    background-position: 2px 14px;
+}
+#feedback.warning {
+    background-image: url("../img/warning.png");
+}
+#feedback.tip {
+    background-image: url("../img/tip.png");
+}

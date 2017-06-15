@@ -1,0 +1,46 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: "Oswald", "Futura", "sans-serif";
+}
+div#page {
+    background-color: #403c3b;
+    width: 90%;
+    max-width: 450px;
+    margin: 10px auto;
+    padding: 20px 10px;
+}
+h1 {
+    background-image: url("../img/2xkinglogo.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 75px;
+    width: 150px;
+    text-indent: -1000%;
+    background-size: 50%;
+    margin: 0 auto;
+}
+h2 {
+    text-align: center;
+    margin: 30px auto;
+}
+form {
+    margin: 0 auto;
+    text-align: center;
+}
+textarea {
+    color: #403c3b;
+    font-size: 24px;
+    font-family: "Oswald", "Futura", "sans-serif";
+    margin: 10px auto;
+    width: 80%;
+    height: 150px;
+    border-radius: 8px;
+    outline: none;
+    padding: 5px 5px;
+}
+#wordCount, #keyCode {
+    margin: 10px 10%;
+    font-size: 24px;
+    letter-spacing: -0.05em;
+}

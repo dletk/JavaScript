@@ -1,0 +1,79 @@
+body {
+    color: #ffffff;
+    font-family: 'Oswald', 'Futura', sans-serif;
+    background-color: black;
+}
+
+div#page {
+    width: 50%;
+    max-width: 500px;
+    background-color: #666666;
+    margin: 100px auto;
+}
+
+h1 {
+    background-image: url("../img/2xkinglogo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50%;
+    text-indent: -1000%;
+    margin: 0 auto;
+    text-align: center;
+    width: 117px;
+    height: 75px;
+    line-height: 75px;
+    padding: 30px 10px 10px 10px;
+}
+
+h2 {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 32px;
+}
+
+ul {
+    list-style: none;
+    background-color: #ec8b68;
+    margin: 10px auto;
+    padding: 0 0;
+}
+
+li {
+    border-top: 1px solid #fe9772;
+    border-bottom: 1px solid #fe9772;
+    margin: auto auto;
+    font-size: 24px;
+    padding: 15px 15px 15px 15px;
+    letter-spacing: 0.005em;
+    text-shadow: 2px 0.5px 1px black;
+}
+
+/*Coordinate bar style*/
+div#coordinate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #3b6a5e;
+    padding: 20px;
+    width: 100%;
+    letter-spacing: -0.005em;
+    /*text-align: center;*/
+}
+
+input {
+    border-radius: 8px;
+    font-size: 28px;
+    width: 4em;
+    border: 0;
+    outline: none;
+    padding: 5px;
+    color: #666666;
+}
+
+.divider {
+    color: #3b6a5e;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    padding: 0;
+    margin: 0 40px;
+}
