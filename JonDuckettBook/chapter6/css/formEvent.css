@@ -1,0 +1,69 @@
+body {
+    font-family: "Oswald", "Futura", "sans-serif";
+    color: #ffffff;
+    background-color: black;
+}
+div#page {
+    background-color: #403c3b;
+    max-width: 450px;
+    margin: 0 auto;
+    width: 96%;
+    padding: 10px 20px;
+}
+h1 {
+    text-indent: -1000%;
+    background-image: url("../img/2xkinglogo.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    width: 150px;
+    height: 75px;
+    margin: auto auto;
+}
+h2 {
+    letter-spacing: -0.005em;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 30px;
+}
+form {
+    margin: 30px 10% 50px;
+    line-height: 50px;
+    padding: 10px 10px;
+}
+label {
+    font-size: 20px;
+}
+select {
+    font-size: 18px;
+}
+select ~ label {
+    font-size: 16px;
+}
+input#submitButton {
+    font-size: 20px;
+    float: right;
+    background-color: #9f593f;
+    color: whitesmoke;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 0;
+}
+input#submitButton:hover {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+    background-color: #914141;
+}
+div#feedbackPackage {
+    background-image: url("../img/tip.png");
+}
+div#feedbackTerm {
+    background-image: url("../img/warning.png");
+}
+div#feedbackPackage, div#feedbackTerm {
+    line-height: 20px;
+    background-repeat: no-repeat;
+    background-position: 2px 2px;
+    padding: 0 24px 0 24px;
+}

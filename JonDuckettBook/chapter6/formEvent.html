@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form event</title>
+    <link rel="stylesheet" href="css/formEvent.css" type="text/css">
+</head>
+<body>
+    <div id="page">
+        <h1>Listking</h1>
+        <h2>Membership</h2>
+        <form method="post" action="http://www.example.com/register.php">
+            <label for="listPackage">Select a package: </label>
+            <select id="listPackage">
+                <option value="5">1 month ($5)</option>
+                <option value="50">1 year ($50)</option>
+            </select>
+            <div id="feedbackPackage"></div>
+            <input type="checkbox" id="termAgree">
+            <label for="termAgree">Check to agree to terms and conditions.</label>
+            <div id="feedbackTerm"></div>
+            <input type="submit" id="submitButton" value="Next">
+        </form>
+    </div>
+    <script src="js/formEvent.js"></script>
+</body>
+</html>
